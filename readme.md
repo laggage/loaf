@@ -14,6 +14,7 @@
     - [package.json中添加`exports`配置声明模块导出路径](#packagejson中添加exports配置声明模块导出路径)
 - [用api-extractor提取出干净的`.d.ts`](#用api-extractor提取出干净的dts)
   - [配置使用API extractor](#配置使用api-extractor)
+  - [更新`package.json`](#更新packagejson)
   - [用@internal标注只希望在内部使用的class](#用internal标注只希望在内部使用的class)
 - [小结](#小结)
 
@@ -1056,7 +1057,7 @@ api-extractor init
 ```
 </details>
 
-然后更新`package.json`
+### 更新`package.json`
 
 ```json {4,7,8}
 {
@@ -1117,4 +1118,3 @@ export { }
 ## 小结
 
 至此, 我们就可以构建一个可以通过诸如`AMD` `CommonJs` `esm`等js模块系统或是使用`script标签`的方式引用的js库了, 主要用到了`webpack` `typescript` `api-extractor`这些工具. 完整的示例代码可以访问[github-laggage/loaf](https://github.com/laggage/loaf.git)查看.
-
