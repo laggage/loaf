@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "outDir": "dist/lib",
+        "sourceMap": false,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        // 开启这个选项, 可以让你直接通过`import`的方式来引用commonjs模块
+        // 这样你的代码库中就可以统一的使用import导入依赖了, 而不需要另外再使用require导入commonjs模块
+        "esModuleInterop": true,
+        // 是否允许合成默认导入
+        // 开启后, 依赖的模块如果没有导出默认的模块
+        // 那么typescript会帮你给该模块自动合成一个默认导出让你可以通过默认导入的方式引用该模块
+        "allowSyntheticDefaultImports": true,
+        // 是否生成`.d.ts`的类型声明文件
+        "declaration": true,
+        // 输出的目标js版本, 这里用es6, 然后配和babel进行转译才以获得良好的浏览器兼容
+        "target": "es6",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "lib": ["es2015", "dom"],
+        "declarationMap": true,
+        // 启用严格的null检查
+        "strictNullChecks": true,
+        // 启用严格的属性初始化检查
+        // 启用后类属性必须显示标注为可空或赋一个非空的初始值
+        "strictPropertyInitialization": true
+    },
+    "exclude": ["node_modules"],
+    "include": ["src/**/*"]
+}
